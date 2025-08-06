@@ -14,9 +14,9 @@ A serverless web application for creating and managing video-based training modu
    pip install -r requirements.txt
 
 # Start the mock API, frontend, and Streamlit dashboard:
-   npm run start:mock --prefix backend
-   npm run dev --prefix frontend
-   export DASHBOARD_PASSWORD='your_secure_password'
-   streamlit run streamlit/app.py
+ 1.  npm run start:mock --prefix backend
+ 2.  npm run dev --prefix frontend
+ 3.  export DASHBOARD_PASSWORD='your_secure_password'
+ 4.  streamlit run streamlit/app.py
 
 
