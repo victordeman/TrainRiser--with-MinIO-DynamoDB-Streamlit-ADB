@@ -12,3 +12,11 @@ A serverless web application for creating and managing video-based training modu
    python3 -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
+
+# Start the mock API, frontend, and Streamlit dashboard:
+   npm run start:mock --prefix backend
+   npm run dev --prefix frontend
+   export DASHBOARD_PASSWORD='your_secure_password'
+   streamlit run streamlit/app.py
+
+
