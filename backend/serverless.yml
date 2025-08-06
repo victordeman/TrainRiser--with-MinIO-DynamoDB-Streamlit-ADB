@@ -1,0 +1,38 @@
+# Configuration for local testing with MinIO and DynamoDB Local
+# For production, update endpoints to use AWS services
+service: training-module-backend
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+functions:
+  uploadVideo:
+    handler: functions/handler.uploadVideo
+    events:
+      - http:
+          path: /modules/upload
+          method: post
+          cors: true
+  saveMetadata:
+    handler: functions/handler.saveMetadata
+    events:
+      - http:
+          path: /modules
+          method: post
+          cors: true
+  getModules:
+    handler: functions/handler.getModules
+    events:
+      - http:
+          path: /modules
+          method: get
+          cors: true
+  trackAnalytics:
+    handler: functions/handler.trackAnalytics
+    events:
+      - http:
+          path: /modules/{id}/analytics
+          method: post
+          cors: true
+# Note: For local testing, use MinIO (http://localhost:9000) for S3 and DynamoDB Local (http://localhost:8000)
+# Run mock-api.ts for local API Gateway emulation (http://localhost:3000)
